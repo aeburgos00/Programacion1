@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1660268402 source:c:\users\usuario\documents\programas\programacion\unidad1\mathmio.c
+1660673738 source:c:\users\usuario\documents\programas\programacion\unidad1\mathmio.c
 	<stdio.h>
 
 1660268281 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer06\main.c
@@ -7,5 +7,5 @@
 	<stdlib.h>
 	"../mathMio.h"
 
-1660267224 c:\users\usuario\documents\programas\programacion\unidad1\mathmio.h
+1660673729 c:\users\usuario\documents\programas\programacion\unidad1\mathmio.h
 

@@ -90,8 +90,8 @@ float raizCuadrada(float x, float tol) {
     return termAct;
 }
 
-float senX(float x, float tol) {
-    float seno=0, term;
+double senX(double x, double tol) {
+    double seno=0, term;
     int i=1, signo=0;
     do{
         term = (potencia(x,i)/factorial(i));
@@ -119,4 +119,68 @@ int perteneceFibonacci(int num) {
             return 1;
     }while(num>termAct);
     return 0;
+}
+
+//NATURAL PERFECTO, DEFICIENTE O ABUNDANTE
+
+void numPerfDefAbun(int num) {
+    int sum=0, i;
+    for(i=1;i<num;i++){
+        if(!(num%i))
+            sum+=i;
+    }
+    printf("El numero %d es %s", num, (num==sum? "Perfecto":(num<sum)?"Abundante":"Deficiente"));
+}
+
+//PRODUCTO POR SUMAS SUCESIVAS
+
+int productoXSumasSucesivas(int num1, int num2){
+    int resul=0,i;
+    for(i=0;i<num2;i++){
+        resul+=num1;
+    }
+    return resul;
+}
+
+//COCIENTE Y RESTO ENTEROS
+int cocienteDeEnteros(int num1, int num2){
+    return (num1/num2);
+}
+int restoDeEnteros(int num1, int num2){
+    return (num1%num2);
+}
+
+//SUMA PRIMEROS N NATURALES
+int sumaPrimerosNNaturales(int n){
+    int suma=0;
+    for(int i=0;i<=n;i++)
+        suma+=i;
+    return suma;
+}
+//PARES
+int sumaPrimerosNParesNaturales(int n){
+    int suma=0,i;
+    for(i=1;i<=n;i++){
+        suma+=i*2;
+    }
+    return suma;
+}
+//PARES MENORES A N
+int sumaParesNaturalesMenoresQueN(int n){
+    int suma=0,i;
+    for(i=0;i<n;i+=2){
+        suma+=i;
+    }
+    return suma;
+}
+
+//NATURAL PRIMO
+int naturalPrimo(int num){
+    int div=0, i=1;
+    do{
+        if((num%i)==0)
+            div++;
+        i++;
+    }while(i<num && div<2);
+    return ((div==1)?1:0);
 }
