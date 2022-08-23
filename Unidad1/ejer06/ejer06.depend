@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1660673738 source:c:\users\usuario\documents\programas\programacion\unidad1\mathmio.c
+1660679465 source:c:\users\usuario\documents\programas\programacion\unidad1\mathmio.c
 	<stdio.h>
 
-1660268281 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer06\main.c
+1660673779 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer06\main.c
 	<stdio.h>
 	<stdlib.h>
 	"../mathMio.h"
 
-1660673729 c:\users\usuario\documents\programas\programacion\unidad1\mathmio.h
+1660679039 c:\users\usuario\documents\programas\programacion\unidad1\mathmio.h
 

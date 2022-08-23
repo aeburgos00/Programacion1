@@ -49,4 +49,7 @@ int sumaParesNaturalesMenoresQueN(int n);
 //punto 13
 int naturalPrimo(int num);
 
+//punto 21
+int parteEnteraDeUnReal(double num);
+
 #endif // MATHMIO_H

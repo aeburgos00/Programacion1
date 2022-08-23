@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1661173273 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer15\main.c
+	"../Bibliotecas/fechasMio.h"
+
+1661175191 c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\fechasmio.h
+	<stdio.h>
+	<stdlib.h>
+
+1661187840 source:c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\fechasmio.c
+	"fechasMio.h"
+

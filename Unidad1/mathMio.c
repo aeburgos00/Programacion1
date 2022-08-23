@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include "mathMio.h"
 
 //FUNCION FACTORIAL
 
 int factorial(int num) {
-    int i, fac=1;
+    unsigned long int i, fac=1;
     if(num!=0)
         for(i=1;i<=num;i++)
             fac*=i;
     return fac;
+    //HACERLO UNSIGNED LONG AL FACTORIAL
 }
 
 //VALIDACIONES
@@ -92,17 +94,21 @@ float raizCuadrada(float x, float tol) {
 
 double senX(double x, double tol) {
     double seno=0, term;
-    int i=1, signo=0;
+    int i=1, signo=1;
     do{
         term = (potencia(x,i)/factorial(i));
         i+=2;
-        if(!signo) {
-            seno+=term;
-            signo=1;
-        } else {
-            seno-=term;
-            signo=0;
-        }
+//        if(!signo) {
+//            seno+=term;
+//            signo=1;
+//        } else {
+//            seno-=term;
+//            signo=0;
+//        }
+        //ESTE ERA EL MIO ANTES
+        seno+=term*signo;
+        signo*=-1;
+        //FORMA MAS OPTIMA DE HACERLO
     }while(term>tol);
     return seno;
 }
@@ -183,4 +189,9 @@ int naturalPrimo(int num){
         i++;
     }while(i<num && div<2);
     return ((div==1)?1:0);
+}
+
+//PARTE ENTERA DE UN REAL
+int parteEnteraDeUnReal(double num){
+    return (int)num;
 }
