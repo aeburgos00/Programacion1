@@ -15,7 +15,7 @@ int main()
         if(cantElem<=TAM)
             cantElem++;
         printf("\n");
-        mostrarVec(vec, TAM);
+        mostrarVec(vec, cantElem);
         printf("\nElegir una posicion a insertar(max %d)(0 para terminar): ",TAM);
         pos = validarEntre(0, TAM);
     }

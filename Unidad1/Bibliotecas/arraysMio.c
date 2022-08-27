@@ -1,8 +1,5 @@
 #include "arraysMio.h"
 
-///Desarrollar una función que inserte un elemento en un arreglo de enteros, dada
-///la posición de inserción.
-
 int validarEntre(int men, int may){
     int n;
     do{
@@ -44,5 +41,19 @@ void insertarSegunPos(int* vec, int pos, int tam, int valor, int cantElem){
         }
         *puntAux = valor;
     }
-}
+} ///ARREGLAR CON LA VALIDACION QUE ESTA HECHA EN EL MAIN
 
+void insertarEnVecOrdAsc(int* vec, int tam, int valor){
+    int i=0, j, aux, auxSig=valor;
+    while(i<tam && (*vec)<valor){
+        vec++;
+        i++;
+    }
+    if(i<tam)
+        for(j=i;j<tam;j++){
+            aux=auxSig;
+            auxSig=(*vec);
+            *vec=aux;
+            vec++;
+        }
+}
