@@ -49,6 +49,9 @@ int sumaParesNaturalesMenoresQueN(int n);
 //punto 13
 int naturalPrimo(int num);
 
+//punto 20
+int multiplicacionRusa(int num1, int num2);
+
 //punto 21
 int parteEnteraDeUnReal(double num);
 

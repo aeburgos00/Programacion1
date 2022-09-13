@@ -191,6 +191,20 @@ int naturalPrimo(int num){
     return ((div==1)?1:0);
 }
 
+//MULTIPLICACION RUSA
+int multiplicacionRusa(int num1, int num2){
+    int resul=0;
+    while(num1!=1){
+        if(num1%2){
+            resul+=num2;
+        }
+        num1/=2;
+        num2*=2;
+    }
+    resul+=num2;
+    return resul;
+}
+
 //PARTE ENTERA DE UN REAL
 int parteEnteraDeUnReal(double num){
     return (int)num;

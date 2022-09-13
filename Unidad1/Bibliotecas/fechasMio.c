@@ -83,11 +83,22 @@ tFecha restarNDiasAFecha(int d, int m, int a, int n){
 int difDiasEntreFechas(int d1, int m1, int a1, int d2, int m2, int a2){
     int dif, anioAux;
     dif = diasDelAnio(d2,m2,a2)-diasDelAnio(d1,m1,a1);
-    for(anioAux=a1;anioAux<a2;anioAux++)
-        dif+=cantDiasDelAnio(anioAux);
-    return (dif<0)?dif*-1:dif;
-} ///REPASARLO BIEN ESTE Y VER SI SE PUEDE OPTIMIZAR
+    if(dif<0)
+        dif*=-1;
+    if(a1<a2)
+        for(anioAux=a1;anioAux<a2;anioAux++)
+            dif+=cantDiasDelAnio(anioAux);
+    else
+        for(anioAux=a2;anioAux<a1;anioAux++)
+            dif+=cantDiasDelAnio(anioAux);
+    return dif;
+}
 
+int diaDeLaSemana(int d, int m, int a){
+    tFecha diaBase = {1,1,1601};
+    int dif = difDiasEntreFechas(d,m,a, diaBase.dia, diaBase.mes, diaBase.anio);
+    return (dif)%7;
+}
 
 //DESARROLLO DE FUNCIONES INTERNAS
 int cantDiasDelMes(int mes, int anio){

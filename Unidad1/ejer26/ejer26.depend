@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1661711369 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer26\main.c
+	"../Bibliotecas/arraysMio.h"
+
+1661711352 c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\arraysmio.h
+	<stdio.h>
+	<stdlib.h>
+
+1661711353 source:c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\arraysmio.c
+	"arraysMio.h"
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1662985972 source:c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\matricesmio.c
+	"matricesMio.h"
+
+1662986142 c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\matricesmio.h
+	<stdio.h>
+	<stdlib.h>
+
+1662986121 source:c:\users\usuario\documents\programas\programacion\unidad1\ejer33\main.c
+	"../Bibliotecas/matricesMio.h"
+

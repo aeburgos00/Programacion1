@@ -29,4 +29,7 @@ tFecha restarNDiasAFecha(int d, int m, int a, int n);
 //punto 18
 int difDiasEntreFechas(int d1, int m1, int a1, int d2, int m2, int a2);
 
+//punto 19
+int diaDeLaSemana(int d, int m, int a);
+
 #endif // FECHASMIO_H

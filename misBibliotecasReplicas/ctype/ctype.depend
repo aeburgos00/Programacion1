@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1662512995 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\ctype\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ctypeMio.h"
+
+1662513104 c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\ctype\ctypemio.h
+
+1662513149 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\ctype\ctypemio.c
+	"ctypeMio.h"
+

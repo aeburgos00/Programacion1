@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1663031095 source:c:\users\usuario\documents\programas\programacion\tarea\09-09-2022\fcmemdinamica.c
+	<string.h>
+	"fcMemDinamica.h"
+	"../../Unidad1/Bibliotecas/fechasMio.h"
+
+1663031038 c:\users\usuario\documents\programas\programacion\tarea\09-09-2022\fcmemdinamica.h
+	<stdio.h>
+	<stdlib.h>
+
+1663031176 source:c:\users\usuario\documents\programas\programacion\tarea\09-09-2022\main.c
+	"fcMemDinamica.h"
+
+1661776774 source:c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\fechasmio.c
+	"fechasMio.h"
+
+1661774530 c:\users\usuario\documents\programas\programacion\unidad1\bibliotecas\fechasmio.h
+	<stdio.h>
+	<stdlib.h>
+
