@@ -24,4 +24,8 @@ char* str_lwr(char*cad);
 
 char* str_upr(char*cad);
 
+void* mem_cpy(void* copia, const void* orig, int n);
+
+void* mem_move(void* copia, const void* orig, int n);
+
 #endif // STRINGMIO_H

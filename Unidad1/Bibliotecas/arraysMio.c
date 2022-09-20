@@ -77,6 +77,22 @@ void eliminarSegunPos(int* vec, int pos, int *cantElem){
     (*cantElem)--;
 }
 
+void eliminarPrimeraAparicion(int* vec, int valor,int*cantElem){
+    int i=0;
+    while(*vec!=valor && i<(*cantElem)-1){
+        vec++;
+        i++;
+    }
+    if((*vec==valor)){
+        while(i<(*cantElem)-1){
+            *vec = *(vec+1);
+            vec++;
+            i++;
+        }
+        (*cantElem)--;
+    }
+}
+
 void eliminarElemDeUnVec(int* vec, int valor, int *cantElem){
     int* iniVec = vec, *elemFinal = vec;
     int i;

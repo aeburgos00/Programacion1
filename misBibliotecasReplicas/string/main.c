@@ -5,6 +5,13 @@
 
 int main()
 {
+    ///STRSTR
+    char cad1[] = "hola a todos";
+    char cad2[] = "a to";
+    printf("La cadena 1: %s\n",cad1);
+    printf("La cadena 2: %s\n",cad2);
+    printf("\nLa cadena 2 %s encuentra incluida en la primera\n%s", (str_str(cad1,cad2)!=NULL)?"se":"no se", str_str(cad1,cad2));
+
     ///STRCMP
     /*char cad1[21]="Hola chicos";
     char cad2[21]="Hola chicos";
@@ -28,11 +35,11 @@ int main()
     printf("%s", str_lwr(cad));*/
 
     ///STRUPR
-    char cad[21]="HOLA chicOs";
+    /*char cad[21]="HOLA chicOs";
     printf("---MI STRUPR---\n");
     printf("Las cadena:\n%s\n", cad);
     printf("En mayusculas es:\n");
-    printf("%s", str_upr(cad));
+    printf("%s", str_upr(cad));*/
 
     return 0;
 }

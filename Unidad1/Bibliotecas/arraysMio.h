@@ -22,6 +22,9 @@ void insertarEnVecOrdAsc(int* vec, int tam, int valor);
 //punto 24
 void eliminarSegunPos(int* vec, int pos, int *cantElem);
 
+//punto 25
+void eliminarPrimeraAparicion(int* vec, int valor,int*cantElem);
+
 //punto 26
 void eliminarElemDeUnVec(int* vec, int valor, int *cantElem);
 

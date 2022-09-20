@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1663272309 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\stringmio.c
+	"stringMio.h"
+
+1663269313 c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\stringmio.h
+	<stdlib.h>
+	<ctype.h>
+
+1663275586 source:c:\users\usuario\documents\programas\programacion\tarea\13-09-2022\main.c
+	<stdio.h>
+	<string.h>
+	"../../misBibliotecasReplicas/string/stringMio.h"
+
+1663326970 source:c:\users\usuario\documents\programas\programacion\tarea\13-09-2022\funciones.c
+	"funciones.h"
+
+1663326955 c:\users\usuario\documents\programas\programacion\tarea\13-09-2022\funciones.h
+	<stdio.h>
+	<string.h>
+

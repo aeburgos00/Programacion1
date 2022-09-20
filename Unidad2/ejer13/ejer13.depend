@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1663634199 source:c:\users\usuario\documents\programas\programacion\unidad2\bibliotecas\archivos.c
+	"archivos.h"
+
+1663632341 c:\users\usuario\documents\programas\programacion\unidad2\bibliotecas\archivos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1663633227 source:c:\users\usuario\documents\programas\programacion\unidad2\ejer13\main.c
+	"../Bibliotecas/archivos.h"
+

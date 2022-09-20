@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1662987603 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\main.c
+1663161961 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdlib.h>
@@ -9,6 +9,6 @@
 	<stdlib.h>
 	<ctype.h>
 
-1662988079 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\stringmio.c
+1663161946 source:c:\users\usuario\documents\programas\programacion\misbibliotecasreplicas\string\stringmio.c
 	"stringMio.h"
 
