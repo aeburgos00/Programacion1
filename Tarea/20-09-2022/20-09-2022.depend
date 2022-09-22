@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1663888224 source:c:\users\usuario\documents\programas\programacion\tarea\20-09-2022\main.c
+	"funciones.h"
+
+1663887261 c:\users\usuario\documents\programas\programacion\tarea\20-09-2022\funciones.h
+	<stdio.h>
+	<stdlib.h>
+
+1663888957 source:c:\users\usuario\documents\programas\programacion\tarea\20-09-2022\funciones.c
+	"funciones.h"
+
