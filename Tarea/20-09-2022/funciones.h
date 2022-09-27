@@ -31,7 +31,7 @@ void mostrarArchivoAlumnosAct(const char* nombreArch);
 
 int compararAlumDni(const void* al1, const void* al2);
 
-void algoritmoMerge(const char* maestro, const char* novedades, int tamElemMae, int tamElemNov, int(*comparar)(const void*, const void*));
+void algoritmoMerge(const char* maestro, const char* novedades, int(*comparar)(const void*, const void*));
 
 
 

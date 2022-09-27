@@ -8,7 +8,7 @@ int main()
     printf("\n");
     mostrarArchivoAlumnosAct("novedades.dat");
 
-    algoritmoMerge("maestro.dat","novedades.dat",sizeof(t_Alumnos),sizeof(t_AlumnosActualizar),compararAlumDni);
+    algoritmoMerge("maestro.dat","novedades.dat",compararAlumDni);
 
     printf("\nDESPUES DEL MERGE\n");
 

@@ -1,0 +1,10 @@
+4567|m|Banega|Carreta|9.400000|24/1/1695
+2023|m|Benedetto|Pipa|7.400000|11/9/1995
+2222|m|Benedetto|Pipa|7.400000|16/4/1955
+1234|m|Bermudez|Tito|5.700000|16/2/1209
+1111|m|Burgos|Agustin|8.200000|4/6/2000
+7777|m|Espaguetti|Tobac|8.700000|24/6/2001
+8033|f|Mercury|Juana|4.200000|4/2/1989
+8888|m|Mercury|Jhonfer|4.200000|3/12/1999
+6666|m|Riquelme|Juan|9.300000|14/10/2011
+7890|m|Zanetti|Pupi|7.700000|12/12/1999

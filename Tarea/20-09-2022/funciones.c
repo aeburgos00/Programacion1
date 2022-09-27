@@ -91,115 +91,96 @@ void mostrarArchivoAlumnosAct(const char* nombreArch){
     fclose(alum);
 }
 
-void algoritmoMerge(const char* maestro, const char* novedades, int tamElemMae, int tamElemNov, int(*comparar)(const void*, const void*)){
+void algoritmoMerge(const char* maestro, const char* novedades, int(*comparar)(const void*, const void*)){
     int cmp;
-//    void*mae, *nov;
     char actNov, bajLogMae;
-    t_Alumnos* mae; ///fijarse como hacerlo generico
-    mae= malloc(tamElemMae);
-    if(!mae)
-        return;
-    t_AlumnosActualizar* nov;  ///fijarse como hacerlo generico
-    nov=malloc(tamElemNov);
-    if(!nov){
-        free(mae);
-        return;
-    }
+    t_Alumnos mae;
+    t_AlumnosActualizar nov;
     FILE* pfMae;
     FILE* pfNov;
     FILE* pfMaeAct;
     FILE* pfErr;
     pfMae= fopen(maestro,"rb");
     if(!pfMae){
-        free(mae);
-        free(nov);
         return;
     }
     pfNov= fopen(novedades, "rb");
     if(!pfNov){
-        free(mae);
-        free(nov);
         fclose(pfMae);
         return;
     }
     pfMaeAct= fopen("maestroActualizado.dat", "wb");
     if(!pfMaeAct){
-        free(mae);
-        free(nov);
         fclose(pfMae);
         fclose(pfNov);
         return;
     }
     pfErr = fopen("errores.dat", "wb");
     if(!pfErr){
-        free(mae);
-        free(nov);
         fclose(pfMae);
         fclose(pfNov);
         fclose(pfErr);
         return;
     }
 
-    fread(mae, tamElemMae, 1, pfMae);
-    fread(nov, tamElemNov, 1, pfNov);
+    fread(&mae, sizeof(mae), 1, pfMae);
+    fread(&nov, sizeof(nov), 1, pfNov);
 
     while(!feof(pfMae) && !feof(pfNov)){
-        actNov = nov->actualizacion;
-        bajLogMae = mae->bajaLogica;
-        if((cmp=comparar(mae,nov))>0){
+        actNov = nov.actualizacion;
+        bajLogMae = mae.bajaLogica;
+        if((cmp=comparar(&mae,&nov))>0){
             if(actNov=='A'){
-                nov->actualizacion='0';
-                fwrite(nov, sizeof(t_AlumnosActualizar),1,pfMaeAct); ///NUEVO: NO ESTE EN EL MAESTRO --- A EN NOV
+                nov.actualizacion='0';
+                fwrite(&nov, sizeof(t_AlumnosActualizar),1,pfMaeAct); ///NUEVO: NO ESTE EN EL MAESTRO --- A EN NOV
             }else{
-                fwrite(nov, sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: NO ESTE EN EL MAESTRO --- M EN NOV ///ERROR: NO ESTE EN EL MAESTRO ----- B EN NOV
+                fwrite(&nov, sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: NO ESTE EN EL MAESTRO --- M EN NOV ///ERROR: NO ESTE EN EL MAESTRO ----- B EN NOV
             }
-            fread(nov,sizeof(t_AlumnosActualizar),1,pfNov);
+            fread(&nov,sizeof(t_AlumnosActualizar),1,pfNov);
         }else if(cmp<0){
             if(bajLogMae=='0'){
-                fwrite(mae,sizeof(t_Alumnos),1,pfMaeAct); ///GUARDAR/MANTENER: 0 EN EL MAESTRO --- NO ESTA EN NOV
+                fwrite(&mae,sizeof(t_Alumnos),1,pfMaeAct); ///GUARDAR/MANTENER: 0 EN EL MAESTRO --- NO ESTA EN NOV
             }
-            fread(mae,sizeof(t_Alumnos),1,pfMae); ///IGNORAR/BORRAR: 1 EN EL MAESTRO --- NO ESTE EN NOV
+            fread(&mae,sizeof(t_Alumnos),1,pfMae); ///IGNORAR/BORRAR: 1 EN EL MAESTRO --- NO ESTE EN NOV
         }else{
             if(bajLogMae=='0'){
                     if(actNov=='A'){
-                        fwrite(nov,sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: 0 EN EL MAESTRO --- A EN NOV
-                        fwrite(mae,sizeof(t_Alumnos),1,pfMaeAct);
+                        fwrite(&nov,sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: 0 EN EL MAESTRO --- A EN NOV
+                        fwrite(&mae,sizeof(t_Alumnos),1,pfMaeAct);
                     }else if(actNov=='B'){
-                        mae->bajaLogica='1';
-                        fwrite(mae,sizeof(t_Alumnos),1,pfMaeAct); ///MODIFICAR: 0 EN EL MAESTRO --- B EN NOV
+                        mae.bajaLogica='1';
+                        fwrite(&mae,sizeof(t_Alumnos),1,pfMaeAct); ///MODIFICAR: 0 EN EL MAESTRO --- B EN NOV
                     } else{
-                        nov->actualizacion = mae->bajaLogica;
-                        fwrite(nov,sizeof(t_AlumnosActualizar),1,pfMaeAct); ///MODIFICAR: 0 EN EL MAESTRO --- M EN NOV
+                        nov.actualizacion = mae.bajaLogica;
+                        fwrite(&nov,sizeof(t_AlumnosActualizar),1,pfMaeAct); ///MODIFICAR: 0 EN EL MAESTRO --- M EN NOV
                     }
             }else{
                 if(actNov=='A'){
-                    mae->bajaLogica='0';
-                    fwrite(mae,sizeof(t_Alumnos),1,pfMaeAct); ///MODIFICAR: 1 EN EL MAESTRO --- A EN NOV
+                    mae.bajaLogica='0';
+                    fwrite(&mae,sizeof(t_Alumnos),1,pfMaeAct); ///MODIFICAR: 1 EN EL MAESTRO --- A EN NOV
                 }else{
-                    fwrite(nov,sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: 1 EN EL MAESTRO --- B EN NOV ///ERROR: 1 EN EL MAESTRO --- M EN NOV
+                    fwrite(&nov,sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: 1 EN EL MAESTRO --- B EN NOV ///ERROR: 1 EN EL MAESTRO --- M EN NOV
                 }
             }
-            fread(mae,sizeof(t_Alumnos),1,pfMae);
-            fread(nov,sizeof(t_AlumnosActualizar),1,pfNov);
+            fread(&mae,sizeof(t_Alumnos),1,pfMae);
+            fread(&nov,sizeof(t_AlumnosActualizar),1,pfNov);
         }
     }
     while(!feof(pfMae)){
         if(bajLogMae=='0'){
-            fwrite(mae,sizeof(t_Alumnos),1,pfMaeAct); ///GUARDAR/MANTENER: 0 EN EL MAESTRO --- NO ESTA EN NOV
+            fwrite(&mae,sizeof(t_Alumnos),1,pfMaeAct); ///GUARDAR/MANTENER: 0 EN EL MAESTRO --- NO ESTA EN NOV
         }
-        fread(mae,sizeof(t_Alumnos),1,pfMae); ///IGNORAR/BORRAR: 1 EN EL MAESTRO --- NO ESTE EN NOV
+        fread(&mae,sizeof(t_Alumnos),1,pfMae); ///IGNORAR/BORRAR: 1 EN EL MAESTRO --- NO ESTE EN NOV
     }
     while(!feof(pfNov)){
         if(actNov=='A'){
-            mae->bajaLogica='0';
-            fwrite(mae, sizeof(t_Alumnos),1,pfMaeAct); ///NUEVO: NO ESTE EN EL MAESTRO --- A EN NOV
+            mae.bajaLogica='0';
+            fwrite(&mae, sizeof(t_Alumnos),1,pfMaeAct); ///NUEVO: NO ESTE EN EL MAESTRO --- A EN NOV
         }else{
-            fwrite(nov, sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: NO ESTE EN EL MAESTRO --- M EN NOV ///ERROR: NO ESTE EN EL MAESTRO ----- B EN NOV
+            fwrite(&nov, sizeof(t_AlumnosActualizar),1,pfErr); ///ERROR: NO ESTE EN EL MAESTRO --- M EN NOV ///ERROR: NO ESTE EN EL MAESTRO ----- B EN NOV
         }
-        fread(nov,sizeof(t_AlumnosActualizar),1,pfNov);
+        fread(&nov,sizeof(t_AlumnosActualizar),1,pfNov);
     }
-    free(mae);
-    free(nov);
     fclose(pfMae);
     fclose(pfNov);
     fclose(pfMaeAct);
